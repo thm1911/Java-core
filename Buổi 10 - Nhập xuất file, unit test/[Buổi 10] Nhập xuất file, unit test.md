@@ -4,7 +4,7 @@
 
 ### 1.1. File
 - Để thao tác với File cần khai báo package `java.io.File`.
-- Cú pháp khai báo:
+- Cú pháp khai báo( không biết được file có được tạo ra hay không):
 ```Java
 File file = new File(String pathName);
 ```
@@ -53,7 +53,9 @@ C:\Users\thamb\Java\Example\file.txt
 
 ### 1.2. TextFile
 - Là một loại tệp tin chứa dữ liệu văn bản được lưu trữ trong định dạng văn bản thuần túy, tức là dữ liệu được lưu trữ dưới dạng chuỗi các ký tự.
+- Đọc bằng File Reader, BufferedReader(nhanh hơn dùng cho đọc ngắn, nhiều lần).
 - Lớp `FileReader` nằm trong package java.io có thể được sử dụng để đọc dữ liệu là các ký tự (character) từ file. Lớp `FileReader` kế thừa từ lớp `InputSreamReader`.
+- Viết bằng FileWriter(mỗi lần là thêm mới, để viết tiếp thì thêm true cạnh filepath), BufferedWriter
 - Lớp `FileWriter` nằm trong package `java.io` được sử dụng để ghi dữ liệu là các ký tự (character) vào file. Lớp `FileWriter` kế thừa từ lớp `OutputStreamWriter`.
 ```Java
 // Main.java
@@ -81,7 +83,8 @@ Phan Thắm
 ```
 ### 1.3. Binary File
 - Là một loại tệp tin chứa dữ liệu không phải là văn bản, mà là các dữ liệu nhị phân. Điều này có nghĩa là dữ liệu được lưu trữ dưới dạng các byte không được mã hóa thành các ký tự văn bản.
--Lớp `FileInputStream` trong package `java.io` có thể được sử dụng để đọc dữ liệu (dạng byte) từ file. Lớp này kế thừa từ lớp abstract `InputStream`.
+- Đọc ghi file gồm 2 luồng: Input Stream, Output Stream
+- Lớp `FileInputStream` trong package `java.io` có thể được sử dụng để đọc dữ liệu (dạng byte) từ file. Lớp này kế thừa từ lớp abstract `InputStream`.
 - Lớp `FileOutputStream` trong package `java.io` có thể được sử dụng để ghi dữ liệu (dạng byte) từ file. Lớp này kế thừa từ lớp abstract `OutputStream`.
 ```Java
 // Main.java

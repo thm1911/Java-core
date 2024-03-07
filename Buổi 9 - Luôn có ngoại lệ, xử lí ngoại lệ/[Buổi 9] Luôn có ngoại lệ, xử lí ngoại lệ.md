@@ -8,10 +8,12 @@
 + Unchecked Exception
 + Error
 ### 1.1. Checked Exception
+- Thường thuộc về bên thứ 3.
 - Đây là các ngoại lệ mà chúng ta phải kiểm tra tại thời điểm biên dịch. Loại exception này không thể bỏ qua được trong quá trình compile, bắt buộc ta phải xử lý nó thì mới compile thành công.
 - Các ngoại lệ kiểu Checked Exception: `IOException1`, `SQLException`, `FileNotFoundException`,...
 
 ### 1.2. Unchecked Exception
+- Thường thuộc về người sử dụng.
 - Các ngoại lệ này không được kiểm tra tại thời điểm biên dịch, nhưng được kiểm tra trong thời gian chạy.
 - Các ngoại lệ kiểu Unchecked Exception:
     - `NullPointerException`: Xảy ra khi cố gắng truy cập hoặc thao tác với một tham chiếu đối tượng mà trỏ đến `Null`.
