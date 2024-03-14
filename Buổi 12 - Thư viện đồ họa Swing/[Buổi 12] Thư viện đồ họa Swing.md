@@ -402,3 +402,66 @@ public class Main {
 }
 ```
 ![alt text](image-16.png)
+
+## 5. Bài tập tạo 1 đồng hồ
+```Java
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+
+
+public class Clock{
+    static void desLabel(JLabel label){
+        label.setBounds(150,120,200,30);
+        label.setHorizontalAlignment(JLabel.CENTER);
+        label.setBackground(Color.PINK);
+        label.setFont(new Font("Arial",Font.BOLD,20));
+        label.setOpaque(true);
+    }
+    public static void main(String[] args) {
+        ImageIcon icon = new ImageIcon("C:\\Users\\thamb\\Java\\Example\\Picture\\đồng hồ.jpg");
+        BorderLayout layout = new BorderLayout();
+        layout.setVgap(100); // Thiết lập khoảng cách chiều dọc
+
+        JFrame frame = new JFrame("My clock!");
+        frame.setSize(500,500);
+        frame.setVisible(true);
+        frame.setLocationRelativeTo(null);
+        frame.setIconImage(icon.getImage());
+        frame.setResizable(false);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JLabel label = new JLabel("What time is it?");
+        JLabel message = new JLabel();
+        desLabel(label);
+        frame.add(label, BorderLayout.NORTH);
+
+        JButton button = new JButton("Click here to get time!");
+        button.setMnemonic(KeyEvent.VK_C);
+        button.setBounds(160,200,180,30);
+        button.setOpaque(true);
+        frame.add(button, BorderLayout.CENTER);
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent x) {
+                button.setVisible(false);
+                label.setVisible(false);
+                LocalDateTime dateandtime = LocalDateTime.now();
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+                String currentTime = dateandtime.format(formatter);
+                message.setText(currentTime);
+                desLabel(message);
+                frame.add(message, BorderLayout.CENTER);
+//                button.setText(currentTime);
+            }
+        });
+    }
+}
+```
